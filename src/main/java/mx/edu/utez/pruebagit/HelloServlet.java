@@ -4,6 +4,7 @@ import java.io.*;
 
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import mx.edu.utez.pruebagit.utils.DatabaseConnectionManager;
 
 @WebServlet(name = "helloServlet", value = "/hello-servlet")
 public class HelloServlet extends HttpServlet {
@@ -15,6 +16,12 @@ public class HelloServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
+
+        /*try{
+            DatabaseConnectionManager.getConnection();
+        } catch(){
+
+        }*/
 
         // Hello
         PrintWriter out = response.getWriter();
